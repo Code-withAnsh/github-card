@@ -1,4 +1,3 @@
-console.log("JS loaded");
 let topsection  = document.querySelector(".top-section");
 let left = document.querySelector(".left");
 let right = document.querySelector(".right");
@@ -18,13 +17,16 @@ let searchScreen = document.querySelector('#search-screen')
 let main = document.querySelector('#main')
 let count = 0;
 search.addEventListener("click", (event) => {
-  event.preventDefault();
-searchScreen.style.display = 'none'
-main.style.block = 'block'
-
+    event.preventDefault();
   if(count>0) return;
   let userInput = document.querySelector("#user");
   let username = userInput.value;
+  if(username.trim()==='') {
+    alert('please enter the username')
+    return
+  }
+  searchScreen.style.display = "none";
+  main.style.block = "block";
   fetch(`https://api.github.com/users/${username}`)
     .then((raw) => raw.json()) //basically humne {} nhi laggaya isliye humko
     //return raw.json likhna nhi pada bina return lagaaye kaam chal jata hai es6 me
