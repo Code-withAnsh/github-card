@@ -298,3 +298,31 @@ html,body{
 .topics-section a:active {
     transform: scale(0.98);
 }
+@media (max-width: 600px) {
+    #main-card {
+        min-width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    #profile-card {
+        width: 100%;
+        min-height: auto;
+        border-radius: 0;
+        padding: 20px 16px;
+    }
+
+    .stats-section {
+        width: 100%;
+    }
+
+    #div1, #div2, #div3 {
+        flex: 1;
+        width: auto;
+    }
+
+    #search-card {
+        width: 90%;
+        padding: 32px 24px;
+    }
+}
